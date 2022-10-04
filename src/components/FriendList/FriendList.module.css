@@ -20,13 +20,23 @@
   border-bottom: 1px solid #1c1e21;
 }
 
-.status {
-  display: block;
-  width: 20px;
-  height: 20px;
-  border-radius: 50%;
-  border: 1px solid #1c1e21;
-}
 .name {
   display: inline-block;
+}
+
+.status {
+  display: block;
+  width: 10px;
+  height: 10px;
+  border-radius: 50%;
+}
+
+.isOnline {
+  composes: status;
+  background-color: #25c2a0;
+}
+
+.isOfline {
+  composes: status;
+  background-color: #c22557;
 }

@@ -41,7 +41,7 @@
 
   font-size: 16px;
   border-top: 1px solid #a5a5a5;
-  background-color: rgb(209, 209, 209);
+  background-color: #d1d1d1;
 }
 .statsItems:not(:last-child) {
   border-right: 1px solid #383e36;
