@@ -1,0 +1,32 @@
+.friendList {
+  text-align: center;
+  margin: 15px auto;
+  padding: 25px;
+  width: 250px;
+  font-size: 24px;
+  color: #1c1e21;
+
+  background-color: rgb(233, 233, 233);
+  box-shadow: 0px 0px 100px 10px rgb(120, 111, 111),
+    0px 0px 50px 2px rgb(208, 205, 205);
+}
+
+.item {
+  display: flex;
+  align-items: center;
+  gap: 20px;
+}
+.item:not(:last-child) {
+  border-bottom: 1px solid #1c1e21;
+}
+
+.status {
+  display: block;
+  width: 20px;
+  height: 20px;
+  border-radius: 50%;
+  border: 1px solid #1c1e21;
+}
+.name {
+  display: inline-block;
+}

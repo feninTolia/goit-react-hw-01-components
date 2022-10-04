@@ -5,15 +5,15 @@ const StatisticsItem = ({ label, percentage }) => {
   return (
     <li className={css.item}>
       <span className="label">{label}</span>
-      <span className="percentage"> {percentage}</span>
+      <span className="percentage"> {`${percentage}%`}</span>
     </li>
   );
 };
 
-export const StatisticsCard = ({ statData }) => {
+export const StatisticsCard = ({ statData, title }) => {
   return (
     <section className={css.statistics}>
-      <h2 className="title">Upload stats</h2>
+      {title && <h2 className={css.title}>{title}</h2>}
 
       <ul className={css.statList}>
         {statData.map(({ id, label, percentage }) => (
