@@ -1,5 +1,6 @@
 import PropTypes from 'prop-types';
-import css from 'components/Profile/Profile.module.css';
+import { UserName, Label, Avatar, Stats, StatsItems } from './Profile.styled';
+import Box from 'components/box';
 
 export const Profile = ({
   avatar,
@@ -11,29 +12,38 @@ export const Profile = ({
   likes,
 }) => {
   return (
-    <div className={css.profile}>
-      <div className="description">
-        <img src={avatar} alt="User avatar" className={css.avatar} />
-        <p className={css.name}>{username}</p>
-        <p className="tag">@{tag}</p>
-        <p className="location">{location}</p>
-      </div>
+    <Box
+      textAlign="center"
+      m="15px auto"
+      width="300px"
+      fontSize="24px"
+      color="#1c1e21"
+      bg="#e9e9e9"
+      boxShadow="0px 0px 100px 10px rgb(120, 111, 111),
+    0px 0px 50px 2px rgb(208, 205, 205)"
+    >
+      <Box>
+        <Avatar src={avatar} alt="User avatar" />
+        <UserName>{username}</UserName>
+        <p>@{tag}</p>
+        <p>{location}</p>
+      </Box>
 
-      <ul className={css.stats}>
-        <li className={css.statsItems}>
-          <span className={css.label}>Followers</span>
-          <span className="quantity">{followers.toLocaleString()}</span>
-        </li>
-        <li className={css.statsItems}>
-          <span className={css.label}>Views</span>
-          <span className="quantity">{views.toLocaleString()}</span>
-        </li>
-        <li className={css.statsItems}>
-          <span className={css.label}>Likes</span>
-          <span className="quantity">{likes.toLocaleString()}</span>
-        </li>
-      </ul>
-    </div>
+      <Stats>
+        <StatsItems>
+          <Label>Followers</Label>
+          <span>{followers.toLocaleString()}</span>
+        </StatsItems>
+        <StatsItems>
+          <Label>Views</Label>
+          <span>{views.toLocaleString()}</span>
+        </StatsItems>
+        <StatsItems>
+          <Label>Likes</Label>
+          <span>{likes.toLocaleString()}</span>
+        </StatsItems>
+      </Stats>
+    </Box>
   );
 };
 

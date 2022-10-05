@@ -1,30 +1,22 @@
+import StatisticsItem from './StatisticItem';
 import PropTypes from 'prop-types';
-import css from 'components/Statistics/Statistics.module.css';
+import { Title, StatList, StatisticsSection } from './Statistics.styled';
 
-const StatisticsItem = ({ label, percentage }) => {
+export const Statistics = ({ statData, title }) => {
   return (
-    <li className={css.item}>
-      <span className="label">{label}</span>
-      <span className="percentage"> {`${percentage}%`}</span>
-    </li>
-  );
-};
+    <StatisticsSection>
+      {title && <Title>{title}</Title>}
 
-export const StatisticsCard = ({ statData, title }) => {
-  return (
-    <section className={css.statistics}>
-      {title && <h2 className={css.title}>{title}</h2>}
-
-      <ul className={css.statList}>
+      <StatList>
         {statData.map(({ id, label, percentage }) => (
           <StatisticsItem key={id} label={label} percentage={percentage} />
         ))}
-      </ul>
-    </section>
+      </StatList>
+    </StatisticsSection>
   );
 };
 
-StatisticsCard.propTypes = {
+Statistics.propTypes = {
   statData: PropTypes.arrayOf(
     PropTypes.exact({
       id: PropTypes.string.isRequired,

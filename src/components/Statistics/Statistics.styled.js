@@ -1,4 +1,16 @@
-.statistics {
+import styled from 'styled-components';
+
+export const Title = styled.h2`
+  padding: 20px 0;
+  font-size: 30px;
+`;
+
+export const StatList = styled.ul`
+  padding: 0;
+  display: flex;
+`;
+
+export const StatisticsSection = styled.div`
   text-align: center;
   margin: 0 auto;
 
@@ -9,19 +21,9 @@
   background-color: rgb(233, 233, 233);
   box-shadow: 0px 0px 100px 10px rgb(120, 111, 111),
     0px 0px 50px 2px rgb(208, 205, 205);
-}
+`;
 
-.title {
-  padding: 20px 0;
-  font-size: 30px;
-}
-
-.statList {
-  padding: 0;
-  display: flex;
-}
-
-.item {
+export const Item = styled.li`
   flex-grow: 0;
   flex-shrink: 1;
   width: 33.33%;
@@ -30,9 +32,9 @@
 
   font-size: 16px;
   border-top: 1px solid #a5a5a5;
-  background-color: rgb(209, 209, 209);
-}
+  background-color: ${p => p.color};
 
-.item:not(:last-child) {
-  border-right: 1px solid #383e36;
-}
+  :not(:last-child) {
+    border-right: 1px solid #383e36;
+  }
+`;
