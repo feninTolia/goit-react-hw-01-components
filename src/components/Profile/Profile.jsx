@@ -15,6 +15,7 @@ export const Profile = ({
     <Box
       textAlign="center"
       m="15px auto"
+      pt="25px"
       width="300px"
       fontSize="24px"
       color="#1c1e21"
